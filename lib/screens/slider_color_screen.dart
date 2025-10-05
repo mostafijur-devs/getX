@@ -8,7 +8,7 @@ class SliderColorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SliderColorController sliderColorController = SliderColorController();
+    SliderColorController sliderColorController = Get.put(SliderColorController()) ;
     return Scaffold(
       body: Stack(
         children: [

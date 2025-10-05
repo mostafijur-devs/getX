@@ -7,7 +7,7 @@ class SwitchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SwitchController switchController = SwitchController();
+    SwitchController switchController = Get.put(SwitchController()  );
     return Scaffold(
 body: Center(
   child: Row(
