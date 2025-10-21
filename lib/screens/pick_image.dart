@@ -14,24 +14,27 @@ class PickImage extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(title: Text("Image Picker Screens")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Obx(
-            () => CircleAvatar(
-              backgroundImage: imagePickerController.imagePath.isNotEmpty
-                  ? FileImage(File(imagePickerController.imagePath.toString()))
-                  : null,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Obx(
+              () => CircleAvatar(
+                 backgroundColor: Colors.red,
+                backgroundImage: imagePickerController.imagePath.isNotEmpty
+                    ? FileImage(File(imagePickerController.imagePath.toString()))
+                    : null,
+              ),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              imagePickerController.pickImage(ImageSource.camera);
-            },
-            child: Text('Open Camera'),
-          ),
-        ],
+            ElevatedButton(
+              onPressed: () {
+                imagePickerController.pickImage(ImageSource.gallery);
+              },
+              child: Text('Open Camera'),
+            ),
+          ],
+        ),
       ),
     );
   }
